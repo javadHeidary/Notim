@@ -37,9 +37,7 @@ class CategoryItemView extends StatelessWidget {
                     );
 
                     if (notes.isEmpty) {
-                      return const CustomEmptyWidget(
-                        title: '! هیچ یادداشتی وجود ندارد',
-                      );
+                      return const CustomEmptyWidget(title: '! یاداشتی نداری');
                     }
 
                     return ListView.separated(

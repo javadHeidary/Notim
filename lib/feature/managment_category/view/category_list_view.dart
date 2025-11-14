@@ -26,7 +26,9 @@ class CategoryListview extends StatelessWidget {
                         final categories = categoriesViewModel.categories;
 
                         if (categories.isEmpty) {
-                          return const CustomEmptyWidget(title: 'دسته‌بندی');
+                          return const CustomEmptyWidget(
+                            title: 'دسته‌بندی نداری',
+                          );
                         }
 
                         return ListView.separated(

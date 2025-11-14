@@ -76,7 +76,7 @@ class _NoteListViewState extends State<NoteListView> {
                   ? Expanded(
                       child: Center(
                         child: const CustomEmptyWidget(
-                          title: 'هیچ یادداشتی وجود ندارد !',
+                          title: 'یاداشتی نداری !',
                         ),
                       ),
                     )
