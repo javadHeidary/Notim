@@ -1,4 +1,5 @@
 import 'package:Notim/core/navigation/navigation_controller.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:Notim/core/widget/custom_appbar_widget.dart';
 import 'package:Notim/core/widget/custom_empty_widget.dart';
 import 'package:Notim/core/widget/custom_note_widget.dart';
@@ -20,7 +21,7 @@ class CategoryItemView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14),
+          padding: EdgeInsets.symmetric(horizontal: AppTheme.size(context, 14)),
           child: Column(
             children: [
               CustomAppbarWidget(
@@ -42,8 +43,8 @@ class CategoryItemView extends StatelessWidget {
 
                     return ListView.separated(
                       itemCount: notes.length,
-                      separatorBuilder: (_, __) => const SizedBox(height: 12),
-                      padding: const EdgeInsets.only(bottom: 16),
+                      separatorBuilder: (_, __) => SizedBox(height: AppTheme.size(context, 12)),
+                      padding: EdgeInsets.only(bottom: AppTheme.size(context, 16)),
                       itemBuilder: (context, index) {
                         final note = notes[index];
                         final isCompleted = note.status == NoteStatus.completed;

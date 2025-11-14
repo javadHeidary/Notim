@@ -1,4 +1,5 @@
 import 'package:Notim/core/theme/app_colors.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:Notim/core/widget/custom_appbar_widget.dart';
 import 'package:Notim/core/widget/custom_empty_widget.dart';
 import 'package:Notim/core/widget/custom_note_widget.dart';
@@ -61,7 +62,7 @@ class _NoteListViewState extends State<NoteListView> {
 
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 14),
+        padding: EdgeInsets.symmetric(horizontal: AppTheme.size(context, 14)),
         child: Scaffold(
           floatingActionButton: FloatingActionButton.extended(
             onPressed: _openAddNote,
@@ -82,9 +83,10 @@ class _NoteListViewState extends State<NoteListView> {
                     )
                   : Expanded(
                       child: ListView.separated(
-                        padding: const EdgeInsets.all(16),
+                        padding: EdgeInsets.all(AppTheme.size(context, 16)),
                         itemCount: notes.length,
-                        separatorBuilder: (_, __) => const SizedBox(height: 12),
+                        separatorBuilder: (_, __) =>
+                            SizedBox(height: AppTheme.size(context, 12)),
                         itemBuilder: (context, index) {
                           final note = notes[index];
                           final category = resolveCategory(note.categoryId);

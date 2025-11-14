@@ -1,5 +1,6 @@
 import 'package:Notim/core/theme/app_colors.dart';
 import 'package:Notim/core/theme/app_text_style.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppbarWidget extends StatelessWidget {
@@ -16,11 +17,11 @@ class CustomAppbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 16),
-      height: 45,
+      margin: EdgeInsets.symmetric(vertical: AppTheme.size(context, 16)),
+      height: AppTheme.size(context, 45),
       decoration: ShapeDecoration(
         color: color,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppTheme.size(context, 8))),
       ),
       child: Stack(
         alignment: Alignment.center,

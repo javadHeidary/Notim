@@ -9,10 +9,4 @@ class AppColors {
   static const Color yellow = Color(0xFFF1FA8C);
   static const Color blue = Color(0xFF1D3557);
   static const Color grey = Color(0xFF6C757D);
-
-  static const LinearGradient noteCardGradient = LinearGradient(
-    colors: [white, Color(0xFFF8F9FA)],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-  );
 }

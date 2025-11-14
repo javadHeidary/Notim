@@ -1,5 +1,6 @@
 import 'package:Notim/core/theme/app_colors.dart';
 import 'package:Notim/core/theme/app_text_style.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomEmptyWidget extends StatelessWidget {
@@ -12,8 +13,8 @@ class CustomEmptyWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(Icons.sentiment_dissatisfied, size: 80, color: AppColors.grey),
-        const SizedBox(height: 16),
+        Icon(Icons.sentiment_dissatisfied, size: AppTheme.size(context, 80), color: AppColors.grey),
+        SizedBox(height: AppTheme.size(context, 16)),
         Text(title, style: AppTextStyle.text(context: context)),
       ],
     );

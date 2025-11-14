@@ -1,5 +1,6 @@
 import 'package:Notim/core/theme/app_colors.dart';
 import 'package:Notim/core/theme/app_text_style.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void showSnackBarWidget(BuildContext context, String message) {
@@ -7,7 +8,10 @@ void showSnackBarWidget(BuildContext context, String message) {
     SnackBar(
       duration: const Duration(seconds: 2),
       behavior: SnackBarBehavior.floating,
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      margin: EdgeInsets.symmetric(
+        horizontal: AppTheme.size(context, 16),
+        vertical: AppTheme.size(context, 12),
+      ),
       content: Text(
         message,
         style: AppTextStyle.body(
@@ -15,7 +19,7 @@ void showSnackBarWidget(BuildContext context, String message) {
         ).copyWith(color: AppColors.white),
       ),
       backgroundColor: AppColors.black,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppTheme.size(context, 8))),
     ),
   );
 }

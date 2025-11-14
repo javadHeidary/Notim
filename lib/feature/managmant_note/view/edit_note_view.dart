@@ -1,4 +1,5 @@
 import 'package:Notim/core/theme/app_colors.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:Notim/core/widget/custom_appbar_widget.dart';
 import 'package:Notim/core/widget/custom_dropdown_widget.dart';
 import 'package:Notim/core/widget/custom_elevated_button.dart';
@@ -66,7 +67,7 @@ class _EditNoteViewState extends State<EditNoteView> {
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14),
+          padding: EdgeInsets.symmetric(horizontal: AppTheme.size(context, 14)),
           child: Form(
             key: _formKey,
             child: Column(
@@ -83,7 +84,7 @@ class _EditNoteViewState extends State<EditNoteView> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: AppTheme.size(context, 16)),
                 CustomTextFieldWidget(
                   controller: _contentController,
                   label: 'متن',
@@ -95,7 +96,7 @@ class _EditNoteViewState extends State<EditNoteView> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: AppTheme.size(context, 16)),
                 CustomDropdownWidget<String>(
                   value:
                       categories.any(
@@ -129,7 +130,7 @@ class _EditNoteViewState extends State<EditNoteView> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: AppTheme.size(context, 16)),
                 CustomDropdownWidget<NoteStatus>(
                   value: _selectedStatus,
                   label: 'وضعیت',
@@ -161,7 +162,7 @@ class _EditNoteViewState extends State<EditNoteView> {
                   title: 'ذخیره تغییرات',
                   onPressed: categories.isEmpty ? () {} : _submit,
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: AppTheme.size(context, 16)),
               ],
             ),
           ),

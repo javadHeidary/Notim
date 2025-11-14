@@ -1,5 +1,6 @@
 import 'package:Notim/core/theme/app_colors.dart';
 import 'package:Notim/core/theme/app_text_style.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
@@ -24,10 +25,10 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.onTap,
   });
 
-  OutlineInputBorder _border({Color color = AppColors.grey}) {
+  OutlineInputBorder _border(BuildContext context, {Color color = AppColors.grey}) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: color, width: 2),
+      borderRadius: BorderRadius.circular(AppTheme.size(context, 12)),
+      borderSide: BorderSide(color: color, width: AppTheme.size(context, 2)),
     );
   }
 
@@ -50,14 +51,14 @@ class CustomTextFieldWidget extends StatelessWidget {
           hintStyle: AppTextStyle.hintText(context: context),
           filled: true,
           fillColor: AppColors.white,
-          border: _border(),
-          enabledBorder: _border(),
-          focusedBorder: _border(color: AppColors.black),
-          errorBorder: _border(color: AppColors.red),
-          focusedErrorBorder: _border(color: AppColors.red),
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 14,
+          border: _border(context),
+          enabledBorder: _border(context),
+          focusedBorder: _border(context, color: AppColors.black),
+          errorBorder: _border(context, color: AppColors.red),
+          focusedErrorBorder: _border(context, color: AppColors.red),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: AppTheme.size(context, 16),
+            vertical: AppTheme.size(context, 14),
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:Notim/core/theme/app_colors.dart';
 import 'package:Notim/core/theme/app_text_style.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomNoteWidget extends StatelessWidget {
@@ -42,20 +43,20 @@ class CustomNoteWidget extends StatelessWidget {
           Expanded(
             child: InkWell(
               onTap: onTap,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(AppTheme.size(context, 16)),
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 14,
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppTheme.size(context, 16),
+                  vertical: AppTheme.size(context, 14),
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.white,
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(AppTheme.size(context, 16)),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.grey.withOpacity(0.12),
-                      blurRadius: 10,
-                      offset: const Offset(0, 6),
+                      blurRadius: AppTheme.size(context, 10),
+                      offset: Offset(0, AppTheme.size(context, 6)),
                     ),
                   ],
                 ),
@@ -64,13 +65,13 @@ class CustomNoteWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        width: 6,
+                        width: AppTheme.size(context, 6),
                         decoration: BoxDecoration(
                           color: categoryColor,
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(AppTheme.size(context, 4)),
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: AppTheme.size(context, 12)),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,7 +92,7 @@ class CustomNoteWidget extends StatelessWidget {
                                         : AppColors.black,
                                   ),
                             ),
-                            const SizedBox(height: 6),
+                            SizedBox(height: AppTheme.size(context, 6)),
                             Text(
                               preview,
                               maxLines: 1,
@@ -107,7 +108,7 @@ class CustomNoteWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: AppTheme.size(context, 12)),
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -117,21 +118,21 @@ class CustomNoteWidget extends StatelessWidget {
                             color: AppColors.blue,
                             tooltip: 'ویرایش',
                             padding: EdgeInsets.zero,
-                            constraints: const BoxConstraints.tightFor(
-                              width: 36,
-                              height: 36,
+                            constraints: BoxConstraints.tightFor(
+                              width: AppTheme.size(context, 36),
+                              height: AppTheme.size(context, 36),
                             ),
                           ),
-                          const SizedBox(width: 8),
+                          SizedBox(width: AppTheme.size(context, 8)),
                           IconButton(
                             onPressed: onDelete,
                             icon: const Icon(Icons.delete),
                             color: AppColors.red,
                             tooltip: 'حذف',
                             padding: EdgeInsets.zero,
-                            constraints: const BoxConstraints.tightFor(
-                              width: 36,
-                              height: 36,
+                            constraints: BoxConstraints.tightFor(
+                              width: AppTheme.size(context, 36),
+                              height: AppTheme.size(context, 36),
                             ),
                           ),
                         ],
@@ -142,22 +143,22 @@ class CustomNoteWidget extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: AppTheme.size(context, 12)),
           InkWell(
             onTap: () => onStatusChanged?.call(!isCompleted),
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(AppTheme.size(context, 16)),
             child: Container(
-              width: 56,
-              height: 76,
+              width: AppTheme.size(context, 56),
+              height: AppTheme.size(context, 76),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: AppColors.white,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(AppTheme.size(context, 16)),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.grey.withOpacity(0.12),
-                    blurRadius: 10,
-                    offset: const Offset(0, 6),
+                    blurRadius: AppTheme.size(context, 10),
+                    offset: Offset(0, AppTheme.size(context, 6)),
                   ),
                 ],
               ),
@@ -166,9 +167,9 @@ class CustomNoteWidget extends StatelessWidget {
                 onChanged: onStatusChanged,
                 activeColor: AppColors.blue,
                 checkColor: AppColors.white,
-                side: const BorderSide(color: AppColors.grey, width: 1.6),
+                side: BorderSide(color: AppColors.grey, width: AppTheme.size(context, 1.6)),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6),
+                  borderRadius: BorderRadius.circular(AppTheme.size(context, 6)),
                 ),
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:Notim/core/theme/app_colors.dart';
 import 'package:Notim/core/theme/app_text_style.dart';
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomCategoryCard extends StatelessWidget {
@@ -29,18 +30,18 @@ class CustomCategoryCard extends StatelessWidget {
               onTap: onTap,
               borderRadius: BorderRadius.circular(16),
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 14,
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppTheme.size(context, 16),
+                  vertical: AppTheme.size(context, 14),
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.white,
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(AppTheme.size(context, 16)),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.grey.withOpacity(0.12),
-                      blurRadius: 10,
-                      offset: const Offset(0, 6),
+                      blurRadius: AppTheme.size(context, 10),
+                      offset: Offset(0, AppTheme.size(context, 6)),
                     ),
                   ],
                 ),
@@ -49,13 +50,13 @@ class CustomCategoryCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        width: 6,
+                        width: AppTheme.size(context, 6),
                         decoration: BoxDecoration(
                           color: categoryColor,
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(AppTheme.size(context, 4)),
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: AppTheme.size(context, 12)),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +70,7 @@ class CustomCategoryCard extends StatelessWidget {
                                 context: context,
                               ).copyWith(fontWeight: FontWeight.w600),
                             ),
-                            const SizedBox(height: 6),
+                            SizedBox(height: AppTheme.size(context, 6)),
                             Text(
                               subtitle,
                               maxLines: 1,
@@ -85,22 +86,22 @@ class CustomCategoryCard extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: AppTheme.size(context, 12)),
           InkWell(
             onTap: onArrowTap ?? onTap,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(AppTheme.size(context, 16)),
             child: Container(
-              width: 56,
-              height: 76,
+              width: AppTheme.size(context, 56),
+              height: AppTheme.size(context, 76),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: AppColors.white,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(AppTheme.size(context, 16)),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.grey.withOpacity(0.12),
-                    blurRadius: 10,
-                    offset: const Offset(0, 6),
+                    blurRadius: AppTheme.size(context, 10),
+                    offset: Offset(0, AppTheme.size(context, 6)),
                   ),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:Notim/core/theme/app_theme.dart';
 import 'package:Notim/core/widget/custom_appbar_widget.dart';
 import 'package:Notim/core/widget/custom_category_card.dart';
 import 'package:Notim/core/widget/custom_empty_widget.dart';
@@ -15,7 +16,7 @@ class CategoryListview extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14),
+          padding: EdgeInsets.symmetric(horizontal: AppTheme.size(context, 14)),
           child: Column(
             children: [
               CustomAppbarWidget(title: 'دسته‌بندی‌ها'),
@@ -32,9 +33,9 @@ class CategoryListview extends StatelessWidget {
                         }
 
                         return ListView.separated(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          padding: EdgeInsets.symmetric(vertical: AppTheme.size(context, 16)),
                           separatorBuilder: (_, __) =>
-                              const SizedBox(height: 12),
+                              SizedBox(height: AppTheme.size(context, 12)),
                           itemCount: categories.length,
                           itemBuilder: (context, index) {
                             final category = categories[index];
